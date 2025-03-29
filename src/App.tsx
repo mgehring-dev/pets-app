@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from "react-native";
+import { PaperProvider } from "react-native-paper";
 
-export default function App() {
+import { StatusBar } from "expo-status-bar";
+import { QueryClientProvider } from "react-query";
+
+import { styles } from "./pages/usuario/styles";
+import { Layout } from "./layout";
+import { Navigation } from "./navigation";
+import { queryClient } from "./config/queryClient";
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <QueryClientProvider client={queryClient}>
+      <PaperProvider>
+        <View style={styles.container}>
+          <Layout>
+            <Navigation />
+            {/* <Rascunho /> */}
+          </Layout>
+          <StatusBar style="auto" />
+        </View>
+      </PaperProvider>
+    </QueryClientProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
