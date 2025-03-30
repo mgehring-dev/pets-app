@@ -85,7 +85,12 @@ export const Login = () => {
                 }
                 style={{ marginBottom: 16 }}
               />
-              <Button mode="contained">Continuar</Button>
+              <Button
+                mode="contained"
+                onPress={() => navigation.navigate("Home")}
+              >
+                Continuar
+              </Button>
             </View>
           </KeyboardAvoidingView>
           <View

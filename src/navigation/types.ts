@@ -1,9 +1,10 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 type RootStackParamList = {
-  CriarConta: undefined;
+  Home: undefined;
   Login: undefined;
-  // adicione mais rotas se tiver
+  Usuario: undefined;
+  CriarConta: undefined;
 };
 
 export type TNavigationProps = NativeStackNavigationProp<RootStackParamList>;

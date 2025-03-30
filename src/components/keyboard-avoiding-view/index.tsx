@@ -1,8 +1,4 @@
-import {
-  ScrollView,
-  StyleSheet,
-  KeyboardAvoidingView as Component,
-} from "react-native";
+import { KeyboardAvoidingView as Component } from "react-native";
 import { Text, TextInput } from "react-native-paper";
 
 interface IProps {
@@ -10,16 +6,5 @@ interface IProps {
 }
 
 export const KeyboardAvoidingView = ({ children }: IProps) => {
-  return (
-    <Component behavior="padding">
-      {/* <ScrollView>{children}</ScrollView> */}
-      {children}
-    </Component>
-  );
+  return <Component behavior="padding">{children}</Component>;
 };
-
-const styles = StyleSheet.create({
-  input: {
-    marginBottom: 16,
-  },
-});
